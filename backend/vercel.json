@@ -1,5 +1,4 @@
 {
-    "installcommand": "npm i express cors dotenv mongoose nodemon form-data jsonwebtoken bcrypt axios",
     "version": 2,
     "builds": [
       {
