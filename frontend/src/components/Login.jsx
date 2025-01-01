@@ -77,8 +77,7 @@ const Login = () => {
                 <input onChange={e=> setPassword(e.target.value)} value={password} type="password" placeholder='Password' className='outline-none text-sm' required/>
             </div>
 
-            <p className='text-sm text-blue-600 my-4 cursor-pointer'>Forgot password?</p>
-            <button className='bg-blue-600 w-full text-white py-2 rounded-full'>{state === 'Login' ? 'Login': 'create account'}</button>
+            <button className='bg-blue-600 w-full text-white py-2 mt-4 rounded-full'>{state === 'Login' ? 'Login': 'create account'}</button>
 
             { state === 'Login' ? <p className='mt-5 text-center'>Don't have an account? <span className='text-blue-600 cursor-pointer' onClick={()=>setState('Sign Up')}>Sign Up</span></p>
              : 
