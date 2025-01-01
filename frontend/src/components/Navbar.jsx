@@ -31,7 +31,7 @@ const Navbar = () => {
             </div>     
             :
             <div className='flex items-center gap-2 sm:gap-5'>
-                <p onClick={()=>navigate('/Buy')} className='cursor-pointer'>Rules & Guidelines</p>
+                <p onClick={()=>navigate('/Buy')} className='cursor-pointer'>Guidelines</p>
                 <button onClick={()=> setShowLogin(true)} className='bg-gradient-to-b from-black to-slate-600 text-white px-7 py-2 sm:px-10 text-sm rounded-full hover:scale-105 transition-all duration-700'>
                     Login
                 </button>
