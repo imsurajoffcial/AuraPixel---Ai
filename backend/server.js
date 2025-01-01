@@ -7,15 +7,26 @@ import userRouter from './routes/userRoutes.js';
 import imageRouter from './routes/imageRoutes.js';
 
 const PORT = process.env.PORT || 4000;
-const app = express()
+const app = express();
 
-app.use(express.json())
-app.use(cors())
-await connectDB()
+app.use(express.json());
+app.use(cors());
 
-app.use('/api/user',userRouter);
-app.use('/api/image',imageRouter);
+(async () => {
+  try {
+    await connectDB(); // Connect to the database
+    console.log('Database connected successfully');
+  } catch (err) {
+    console.error('Error connecting to database:', err.message);
+    process.exit(1); // Exit if database connection fails
+  }
+})();
 
-app.get('/', (req, res) => res.send('HI :)'))
+// Routes
+app.use('/api/user', userRouter);
+app.use('/api/image', imageRouter);
 
-app.listen(PORT,()=> console.log('server running on port'+ PORT));
+app.get('/', (req, res) => res.send('HI :)'));
+
+// Start server
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
